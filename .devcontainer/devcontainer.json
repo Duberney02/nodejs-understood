@@ -1,0 +1,16 @@
+{
+    "name": "nodejs-server",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+		"octref.vetur",
+		"donjayamanne.githistory",
+		"mgmcdermott.vscode-language-babel",
+		"msjsdiag.vscode-react-native",
+		"xabikos.reactsnippets"
+	]
+}

@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+    app:
+        build:
+            context: ..
+            dockerfile: .devcontainer/Dockerfile
+            args: 
+                - NODE_VERSION=${NODE_VERSION}
+        container_name: ${APP_NAME}-www
+        tty: true
+        volumes:
+            - ${APP_DIR}:/workspace
+        ports:
+            - ${HTTP_PORT}:80
+            - ${HTTPS_PORT}:443
+        networks:
+            net:
+                ipv4_address: 176.21.1.2
+        user: root
+        command: sleep infinity
+
+networks: 
+    net:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 170.0.0.1/24
+
+volumes:
+    db_volume:
